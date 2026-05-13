@@ -4,25 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kakoi — Press Kit</title>
-<meta name="description" content="Pitch deck, landing page, and user guide for Kakoi.">
+<meta name="description" content="Pitch deck, landing page, and user guide for Kakoi — the AI content engine for creators.">
 <style>
   :root {
-    --bg: #F7F4EE;
-    --bg-soft: #EFEAE0;
+    --bg: #FAF7EE;
+    --bg-soft: #F2EDDE;
     --surface: #FFFFFF;
-    --ink: #1A1A2E;
-    --ink-soft: #4F5163;
-    --muted: #8B8C9A;
-    --accent: #E26F5C;
-    --accent-soft: #FBE7E1;
+    --ink: #131326;
+    --ink-soft: #4A4C61;
+    --muted: #8A8C9C;
+    --accent: #E25C5C;
+    --accent-2: #E879A6;
+    --accent-3: #FFB347;
     --gold: #C8961E;
-    --gold-soft: #FAF1DC;
-    --border: rgba(26, 26, 46, 0.08);
-    --shadow-sm: 0 1px 2px rgba(26, 26, 46, 0.04);
-    --shadow: 0 8px 24px rgba(26, 26, 46, 0.06);
-    --shadow-lg: 0 20px 40px rgba(26, 26, 46, 0.08);
+    --teal: #4FB8A8;
+    --border: rgba(19, 19, 38, 0.08);
+    --shadow-sm: 0 1px 2px rgba(19, 19, 38, 0.04);
+    --shadow: 0 12px 32px rgba(19, 19, 38, 0.08);
+    --shadow-lg: 0 28px 60px rgba(19, 19, 38, 0.12);
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -30,206 +32,425 @@
     color: var(--ink);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
-    display: flex; align-items: center; justify-content: center;
-    padding: 3rem 2rem;
-    background-image:
-      radial-gradient(circle at 15% 10%, rgba(226, 111, 92, 0.06), transparent 40%),
-      radial-gradient(circle at 90% 80%, rgba(200, 150, 30, 0.05), transparent 35%);
+    overflow-x: hidden;
   }
-  .container { max-width: 880px; width: 100%; }
 
-  .header { text-align: center; margin-bottom: 3.5rem; }
+  /* ----- Animated orbs background ----- */
+  .orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: float 18s ease-in-out infinite;
+  }
+  .orb-1 {
+    width: 520px; height: 520px;
+    background: var(--accent);
+    top: -150px; left: -150px;
+    animation-delay: 0s;
+  }
+  .orb-2 {
+    width: 460px; height: 460px;
+    background: var(--accent-2);
+    top: 40%; right: -200px;
+    animation-delay: -6s;
+  }
+  .orb-3 {
+    width: 400px; height: 400px;
+    background: var(--accent-3);
+    bottom: -150px; left: 30%;
+    animation-delay: -12s;
+  }
+  .orb-4 {
+    width: 340px; height: 340px;
+    background: var(--teal);
+    top: 20%; left: 40%;
+    opacity: 0.25;
+    animation-delay: -3s;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%      { transform: translate(40px, -30px) scale(1.05); }
+    66%      { transform: translate(-30px, 40px) scale(0.95); }
+  }
+
+  .stage { position: relative; z-index: 1; }
+
+  /* ----- Hero ----- */
+  .hero {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
   .badge {
-    display: inline-block;
+    display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--surface);
     color: var(--accent);
-    padding: 0.35rem 1rem;
+    padding: 0.5rem 1.1rem;
     border-radius: 100px;
-    font-size: 0.74rem; font-weight: 600;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 1.8rem;
-    border: 1px solid var(--accent-soft);
-    box-shadow: var(--shadow-sm);
+    font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(226, 92, 92, 0.2);
+    box-shadow: 0 4px 14px rgba(226, 92, 92, 0.1);
   }
-  h1 {
-    font-size: clamp(2.4rem, 4.5vw, 3.4rem);
-    margin: 0 0 0.8rem;
-    letter-spacing: -0.025em;
-    font-weight: 800;
+  .badge::before {
+    content: ''; width: 8px; height: 8px;
+    border-radius: 50%; background: var(--accent);
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.5; transform: scale(1.4); }
+  }
+  h1.title {
+    font-size: clamp(3.4rem, 9vw, 7.5rem);
+    margin: 0 0 1.6rem;
+    letter-spacing: -0.04em;
+    font-weight: 900;
+    line-height: 0.95;
     color: var(--ink);
+    background: linear-gradient(135deg, var(--ink) 30%, var(--accent) 70%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  h1 .dot { color: var(--accent); }
+  h1 .punch { display: inline-block; transform: rotate(-2deg); }
   .tag {
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
     color: var(--ink-soft);
-    font-size: 1.05rem;
-    margin: 0;
-    max-width: 30rem;
-    margin: 0 auto;
-    line-height: 1.55;
+    margin: 0 auto 3rem;
+    max-width: 38rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  .tag strong { color: var(--accent); font-weight: 700; }
+
+  /* ----- Slideshow ----- */
+  .slideshow-wrap {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+  }
+  .slideshow {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: #1a1a2e;
+    border: 1px solid var(--border);
+  }
+  .slide {
+    position: absolute; inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    object-fit: cover;
+    width: 100%; height: 100%;
+  }
+  .slide.active { opacity: 1; }
+
+  .dots {
+    display: flex; justify-content: center; gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    cursor: pointer;
+    transition: width 0.3s ease, background 0.3s ease;
+    padding: 0;
+  }
+  .dot.active {
+    width: 32px;
+    border-radius: 100px;
+    background: var(--accent);
   }
 
+  .slide-caption {
+    position: absolute; bottom: 1.2rem; left: 1.2rem;
+    background: rgba(19, 19, 38, 0.78);
+    color: #fff;
+    padding: 0.55rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem; font-weight: 600;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* ----- Doc cards ----- */
+  .docs {
+    max-width: 1100px; margin: 0 auto;
+    padding: 0 2rem 3rem;
+  }
+  .section-eyebrow {
+    text-align: center;
+    font-size: 0.78rem; font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    text-align: center;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    margin: 0 0 3rem; font-weight: 800;
+    letter-spacing: -0.02em;
+  }
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-    margin-bottom: 1.5rem;
+    gap: 1.5rem;
   }
-  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
 
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 1.8rem;
+    border-radius: 22px;
+    padding: 2.2rem;
     text-decoration: none;
     color: var(--ink);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: block;
-    box-shadow: var(--shadow-sm);
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: -50%; right: -50%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: var(--card-accent);
+    opacity: 0.07;
+    filter: blur(40px);
+    transition: opacity 0.3s ease;
   }
   .card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
-    border-color: rgba(226, 111, 92, 0.3);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--card-accent);
   }
+  .card:hover::before { opacity: 0.15; }
+
+  .card:nth-child(1) { --card-accent: var(--accent); }
+  .card:nth-child(2) { --card-accent: var(--gold); }
+  .card:nth-child(3) { --card-accent: var(--teal); }
+
   .card .icon {
-    width: 2.6rem; height: 2.6rem;
-    border-radius: 12px;
-    background: var(--accent-soft);
-    color: var(--accent);
+    width: 3.4rem; height: 3.4rem;
+    border-radius: 16px;
+    background: var(--card-accent);
+    color: #fff;
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    margin-bottom: 1.4rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   }
-  .card:nth-child(2) .icon { background: var(--gold-soft); color: var(--gold); }
-  .card:nth-child(3) .icon { background: #E4F0E8; color: #4A8E68; }
   .card h3 {
-    margin: 0 0 0.4rem;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--ink);
+    margin: 0 0 0.6rem;
+    font-size: 1.4rem; font-weight: 800;
+    letter-spacing: -0.01em;
   }
   .card p {
-    margin: 0 0 1.2rem;
-    font-size: 0.92rem;
+    margin: 0 0 1.4rem;
+    font-size: 1rem;
     color: var(--ink-soft);
     line-height: 1.55;
   }
   .card .open {
-    color: var(--accent);
-    font-size: 0.85rem; font-weight: 600;
+    color: var(--card-accent);
+    font-size: 0.95rem; font-weight: 700;
     display: inline-flex; align-items: center; gap: 0.3rem;
     transition: gap 0.2s ease;
   }
-  .card:hover .open { gap: 0.55rem; }
+  .card:hover .open { gap: 0.7rem; }
 
+  /* ----- Downloads ----- */
   .downloads {
+    max-width: 1100px; margin: 0 auto;
+    padding: 0 2rem 5rem;
+  }
+  .download-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 1.6rem 1.8rem;
-    margin-top: 1.2rem;
+    border-radius: 22px;
+    padding: 2rem 2.2rem;
     box-shadow: var(--shadow-sm);
   }
-  .downloads h4 {
-    margin: 0 0 1.1rem;
-    font-size: 0.72rem;
+  .download-card h4 {
+    margin: 0 0 1.3rem;
+    font-size: 0.78rem; font-weight: 700;
     color: var(--muted);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
   }
   .download-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 0.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.7rem;
   }
   .download-grid a {
     color: var(--ink);
     text-decoration: none;
     background: var(--bg-soft);
-    padding: 0.7rem 1rem;
-    border-radius: 10px;
-    font-size: 0.88rem;
-    font-weight: 500;
+    padding: 0.85rem 1.1rem;
+    border-radius: 12px;
+    font-size: 0.93rem;
+    font-weight: 600;
     border: 1px solid transparent;
-    display: flex; align-items: center; gap: 0.5rem;
+    display: flex; align-items: center; gap: 0.6rem;
     transition: background 0.2s, border-color 0.2s;
   }
   .download-grid a:hover {
-    background: var(--gold-soft);
-    border-color: var(--gold);
-    color: var(--ink);
+    background: #fff;
+    border-color: var(--accent);
   }
   .download-grid .ext {
     font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
-    background: var(--surface);
-    color: var(--muted);
-    font-size: 0.7rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
+    background: var(--accent); color: #fff;
+    font-size: 0.7rem; font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 5px;
     margin-left: auto;
-    border: 1px solid var(--border);
+    letter-spacing: 0.04em;
   }
+  .download-grid a:nth-child(2) .ext { background: var(--gold); }
+  .download-grid a:nth-child(3) .ext { background: var(--teal); }
+  .download-grid a:nth-child(4) .ext { background: var(--accent-2); }
 
+  /* ----- Footer ----- */
   .footer {
     text-align: center;
     color: var(--muted);
-    font-size: 0.82rem;
-    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    padding: 2rem 1rem 3rem;
   }
-  .footer a {
-    color: var(--accent);
-    text-decoration: none;
-  }
+  .footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
   .footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-<div class="container">
 
-  <div class="header">
-    <span class="badge">Press Kit</span>
-    <h1>Kakoi<span class="dot">.</span></h1>
-    <p class="tag">One creator. Four platforms. Zero burnout. Pick a document to view.</p>
-  </div>
+<div class="orbs">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+</div>
 
-  <div class="grid">
-    <a class="card" href="KAKOI_LANDING.html">
-      <div class="icon">📄</div>
-      <h3>Overview</h3>
-      <p>Single-page promotional site — the fastest way to understand what Kakoi does and who it's for.</p>
-      <span class="open">Open landing page →</span>
-    </a>
+<div class="stage">
 
-    <a class="card" href="KAKOI_GUIDE.html">
-      <div class="icon">📖</div>
-      <h3>User Guide</h3>
-      <p>Step-by-step walkthrough of every feature, with screenshots and ready-to-follow recipes.</p>
-      <span class="open">Open guide →</span>
-    </a>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <span class="badge">For content creators</span>
+    <h1 class="title">One creator.<br>Four platforms.<br><span class="punch">Zero burnout.</span></h1>
+    <p class="tag">
+      The <strong>AI-powered content engine</strong> for solo creators and one-person brands.
+      Built to make publishing across Instagram, Facebook, TikTok, and Threads feel like a single click.
+    </p>
+  </section>
 
-    <a class="card" href="KAKOI_PITCH.html">
-      <div class="icon">🎤</div>
-      <h3>Slide Deck</h3>
-      <p>37-slide presentation. Best for live demos or pitching Kakoi to a creator.</p>
-      <span class="open">Open deck →</span>
-    </a>
-  </div>
-
-  <div class="downloads">
-    <h4>Downloads</h4>
-    <div class="download-grid">
-      <a href="KAKOI_LANDING.pdf">Overview <span class="ext">PDF</span></a>
-      <a href="KAKOI_GUIDE.pdf">User Guide <span class="ext">PDF</span></a>
-      <a href="KAKOI_PITCH.pdf">Slide Deck <span class="ext">PDF</span></a>
-      <a href="KAKOI_PITCH.pptx">Slide Deck <span class="ext">PPTX</span></a>
+  <!-- ============ SLIDESHOW ============ -->
+  <div class="slideshow-wrap">
+    <div class="slideshow" id="slideshow">
+      <img class="slide active" src="slides/slide.001.png" alt="Kakoi cover">
+      <img class="slide" src="slides/slide.010.png" alt="Expanded post card">
+      <img class="slide" src="slides/slide.011.png" alt="Publish everywhere">
+      <img class="slide" src="slides/slide.013.png" alt="Autopilot">
+      <img class="slide" src="slides/slide.017.png" alt="Analytics dashboard">
+      <img class="slide" src="slides/slide.018.png" alt="Calendar">
+      <img class="slide" src="slides/slide.034.png" alt="Everything you get">
+      <div class="slide-caption" id="slide-caption">Cover · 1 of 7</div>
+    </div>
+    <div class="dots" id="dots">
+      <button class="dot active" data-i="0" aria-label="Slide 1"></button>
+      <button class="dot" data-i="1" aria-label="Slide 2"></button>
+      <button class="dot" data-i="2" aria-label="Slide 3"></button>
+      <button class="dot" data-i="3" aria-label="Slide 4"></button>
+      <button class="dot" data-i="4" aria-label="Slide 5"></button>
+      <button class="dot" data-i="5" aria-label="Slide 6"></button>
+      <button class="dot" data-i="6" aria-label="Slide 7"></button>
     </div>
   </div>
 
+  <!-- ============ DOCS ============ -->
+  <section class="docs">
+    <div class="section-eyebrow">Press Kit</div>
+    <h2 class="section-title">Pick a document.</h2>
+    <div class="grid">
+      <a class="card" href="KAKOI_LANDING.html">
+        <div class="icon">📄</div>
+        <h3>Overview</h3>
+        <p>Single-page promotional site — the fastest way to understand what Kakoi does and who it's for.</p>
+        <span class="open">Open landing page →</span>
+      </a>
+      <a class="card" href="KAKOI_GUIDE.html">
+        <div class="icon">📖</div>
+        <h3>User Guide</h3>
+        <p>Step-by-step walkthrough of every feature with screenshots and ready-to-follow recipes.</p>
+        <span class="open">Open guide →</span>
+      </a>
+      <a class="card" href="KAKOI_PITCH.html">
+        <div class="icon">🎤</div>
+        <h3>Slide Deck</h3>
+        <p>37 slides. Best for live demos, recorded walkthroughs, or pitching to a creator.</p>
+        <span class="open">Open deck →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ DOWNLOADS ============ -->
+  <section class="downloads">
+    <div class="download-card">
+      <h4>Downloads</h4>
+      <div class="download-grid">
+        <a href="KAKOI_LANDING.pdf">Overview <span class="ext">PDF</span></a>
+        <a href="KAKOI_GUIDE.pdf">User Guide <span class="ext">PDF</span></a>
+        <a href="KAKOI_PITCH.pdf">Slide Deck <span class="ext">PDF</span></a>
+        <a href="KAKOI_PITCH.pptx">Slide Deck <span class="ext">PPTX</span></a>
+      </div>
+    </div>
+  </section>
+
   <div class="footer">
-    © 2026 Kakoi · Served from GitHub Pages
+    © 2026 Kakoi · One creator. Four platforms. Zero burnout.
   </div>
+
 </div>
+
+<script>
+  const captions = [
+    'Cover', 'Expanded card', 'Publish to four platforms',
+    'Autopilot', 'Analytics dashboard', 'Calendar', 'Everything you get'
+  ];
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const captionEl = document.getElementById('slide-caption');
+  let i = 0;
+  let timer;
+  function show(idx) {
+    slides.forEach((s, k) => s.classList.toggle('active', k === idx));
+    dots.forEach((d, k) => d.classList.toggle('active', k === idx));
+    captionEl.textContent = `${captions[idx]} · ${idx + 1} of ${captions.length}`;
+    i = idx;
+  }
+  function next() { show((i + 1) % slides.length); }
+  function start() { timer = setInterval(next, 4500); }
+  function stop()  { clearInterval(timer); }
+  start();
+  dots.forEach(d => {
+    d.addEventListener('click', () => {
+      stop(); show(parseInt(d.dataset.i, 10)); start();
+    });
+  });
+  // Pause on hover
+  const slideshow = document.getElementById('slideshow');
+  slideshow.addEventListener('mouseenter', stop);
+  slideshow.addEventListener('mouseleave', start);
+</script>
+
 </body>
 </html>
