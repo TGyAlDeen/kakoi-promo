@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kakoi — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #FAF7EE;
+    --surface: #FFFFFF;
+    --ink: #131326;
+    --ink-soft: #4A4C61;
+    --muted: #8A8C9C;
+    --accent: #E25C5C;
+    --border: rgba(19, 19, 38, 0.08);
+    --shadow-sm: 0 1px 2px rgba(19, 19, 38, 0.04);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    position: sticky; top: 0; z-index: 10;
+  }
+  .nav-inner {
+    max-width: 820px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    font-size: 1.2rem; font-weight: 800;
+    color: var(--ink); text-decoration: none;
+  }
+  .logo .dot { color: var(--accent); }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-links a {
+    color: var(--ink-soft); text-decoration: none;
+    font-size: 0.9rem; font-weight: 500;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  main {
+    max-width: 820px; margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+  .updated {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+  }
+  h2 {
+    margin: 2.5rem 0 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 4px; height: 1.2em;
+    background: var(--accent);
+    margin-right: 0.6rem;
+    vertical-align: -3px;
+    border-radius: 2px;
+  }
+  h3 {
+    margin: 1.6rem 0 0.6rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  p, li { color: var(--ink-soft); }
+  ul, ol { padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; }
+  strong { color: var(--ink); }
+  a { color: var(--accent); }
+  code {
+    background: var(--surface);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    font-size: 0.92em;
+    font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+    border: 1px solid var(--border);
+  }
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .toc h4 {
+    margin: 0 0 0.8rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .toc ol {
+    margin: 0; padding-left: 1.2rem;
+    columns: 2; column-gap: 1.5rem;
+  }
+  @media (max-width: 600px) { .toc ol { columns: 1; } }
+  .toc li {
+    margin-bottom: 0.3rem;
+    break-inside: avoid;
+  }
+  .toc a { color: var(--ink); font-size: 0.92rem; text-decoration: none; }
+  .toc a:hover { color: var(--accent); }
+  .callout {
+    background: #FFF7E1;
+    border-left: 3px solid #C8961E;
+    padding: 1rem 1.3rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 2rem 1rem 3rem;
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+  }
+  .footer a { color: var(--accent); text-decoration: none; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">kakoi<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="data-deletion.html">Data Deletion</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<h1>Privacy Policy</h1>
+<p class="updated">Last updated: 14 May 2026 · Effective date: 14 May 2026</p>
+
+<p>This Privacy Policy explains how <strong>Kakoi</strong> ("we," "our," or "us") collects, uses, stores, and protects information when you use our service. Kakoi is a content management tool that helps creators publish posts across multiple social platforms.</p>
+
+<p>By creating a Kakoi account or connecting a social account to Kakoi, you agree to the practices described here. If you do not agree, please do not use the service.</p>
+
+<div class="callout">
+  <strong>Plain-English summary:</strong> We only collect what we need to make Kakoi work for you — your identity, the accounts you connect, the content you create with our tools, and basic usage information. We do not sell your data. We do not share it with anyone except the third-party services strictly necessary to provide the features you use. You can export everything or delete your account at any time.
+</div>
+
+<div class="toc">
+  <h4>Contents</h4>
+  <ol>
+    <li><a href="#what-we-collect">What we collect</a></li>
+    <li><a href="#how-we-use">How we use it</a></li>
+    <li><a href="#third-parties">Third-party services</a></li>
+    <li><a href="#storage">How we store data</a></li>
+    <li><a href="#sharing">When we share data</a></li>
+    <li><a href="#your-rights">Your rights</a></li>
+    <li><a href="#retention">Data retention</a></li>
+    <li><a href="#meta-data">Data from Meta platforms</a></li>
+    <li><a href="#cookies">Cookies and tracking</a></li>
+    <li><a href="#children">Children's privacy</a></li>
+    <li><a href="#international">International transfers</a></li>
+    <li><a href="#changes">Changes to this policy</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</div>
+
+<h2 id="what-we-collect">1. What we collect</h2>
+
+<h3>Information you provide</h3>
+<ul>
+  <li><strong>Account identity</strong> — when you sign in via Facebook or Instagram, we receive your name, email address, profile picture, and Meta user ID.</li>
+  <li><strong>Connected platform accounts</strong> — the Instagram Business / Creator account, Facebook Page, TikTok account, or Threads account you choose to connect, along with an access token authorizing Kakoi to act on your behalf on those accounts.</li>
+  <li><strong>Content you create</strong> — posts you draft or publish through Kakoi, captions, hashtags, generated card images, calendar events, brand voice guidelines, A/B test variants, RSS feed sources you add.</li>
+  <li><strong>Account preferences</strong> — content language, card-style configuration, autopilot rules.</li>
+</ul>
+
+<h3>Information collected automatically</h3>
+<ul>
+  <li><strong>Usage data</strong> — which features you use, click timestamps, session duration. Used solely to improve the product.</li>
+  <li><strong>Device and connection information</strong> — IP address, user agent, browser, device type. Used for session security and fraud prevention.</li>
+  <li><strong>Error logs</strong> — when something fails in the app, we capture the error type, stack trace, and affected feature.</li>
+</ul>
+
+<h3>Information collected from Meta platforms (Instagram and Facebook)</h3>
+<p>When you connect Instagram or Facebook, we receive the following from Meta's Graph API, only as authorized by the permissions you grant:</p>
+<ul>
+  <li>Your Instagram Business / Creator account's basic profile information</li>
+  <li>The Facebook Pages you administer (name, ID, page access tokens)</li>
+  <li>Posts you've published, their reach, likes, comments, and saves (for analytics)</li>
+  <li>Comments on posts you publish through Kakoi (for the in-app inbox)</li>
+</ul>
+<p>We do not access your personal Facebook profile content, your friends list, your messages, or any content unrelated to the Business / Creator accounts you explicitly connect.</p>
+
+<h2 id="how-we-use">2. How we use it</h2>
+<p>We use the information we collect strictly to provide and improve the service:</p>
+<ul>
+  <li><strong>Authenticate you</strong> — sign-in, session management.</li>
+  <li><strong>Act on your behalf</strong> on connected platforms — publish posts, fetch insights, reply to comments — only when you trigger an action or configure Autopilot to do so.</li>
+  <li><strong>Generate AI content</strong> — your prompts and selected article text are sent to our language-model provider to generate captions, hashtags, and image keywords. See section 3.</li>
+  <li><strong>Display your analytics and recommendations</strong> — we fetch and cache your post performance data so you don't have to wait on the Meta API every time you open Kakoi.</li>
+  <li><strong>Improve the product</strong> — aggregated, anonymized usage data informs feature prioritization. We never look at individual user content for product decisions.</li>
+  <li><strong>Communicate with you</strong> — service emails (password reset, security alerts, important changes to this policy). We will not send marketing emails without your explicit opt-in.</li>
+</ul>
+
+<h2 id="third-parties">3. Third-party services we rely on</h2>
+<p>Kakoi forwards specific data to third-party processors strictly as needed to provide features you use:</p>
+<ul>
+  <li><strong>Meta (Instagram, Facebook, Threads APIs)</strong> — content you publish, requests for analytics, comment management. Governed by Meta's own policies.</li>
+  <li><strong>TikTok Content Posting API</strong> — when you connect TikTok, content you choose to publish.</li>
+  <li><strong>Language model provider</strong> — the article text and prompts used to generate captions, hashtags, brand-voice validation, and multi-language variants. We use industry-standard providers and select them on a per-request basis. Prompts and outputs are not used by providers to train their models on your data.</li>
+  <li><strong>Stock photo provider (Pexels)</strong> — search queries you trigger when looking for stock images. Pexels does not receive your identity.</li>
+  <li><strong>Cloud infrastructure providers</strong> — for hosting the application, database, and file storage. Data at rest is encrypted.</li>
+  <li><strong>Analytics and error monitoring</strong> — to detect and fix bugs. No personally identifying user content is included in error reports.</li>
+</ul>
+
+<h2 id="storage">4. How we store data</h2>
+<ul>
+  <li>All connections to Kakoi are encrypted in transit via HTTPS (TLS 1.2 or higher).</li>
+  <li>Your platform access tokens are encrypted at rest using AES-256-GCM. Even Kakoi's own database administrators cannot read your tokens directly.</li>
+  <li>Your account password (if you ever use one — currently Kakoi authenticates via Meta only) is never stored in plain text.</li>
+  <li>Card images and other generated assets are stored in encrypted object storage. Access is restricted to your account only.</li>
+</ul>
+
+<h2 id="sharing">5. When we share data</h2>
+<p>We do not sell, rent, or trade your personal information. We only share data in these limited cases:</p>
+<ul>
+  <li><strong>With service providers</strong> listed in section 3, only as strictly necessary to provide a feature you used.</li>
+  <li><strong>For legal compliance</strong> — when required by law, valid subpoena, or court order. We will notify you unless legally prohibited.</li>
+  <li><strong>To protect rights and safety</strong> — to prevent fraud, security threats, or violations of our Terms.</li>
+  <li><strong>In a business transfer</strong> — if Kakoi is acquired or merges with another entity, your data may transfer. You will be notified, and the new entity must honor this policy.</li>
+</ul>
+
+<h2 id="your-rights">6. Your rights</h2>
+<p>You have the following rights, regardless of jurisdiction:</p>
+<ul>
+  <li><strong>Access</strong> — view all data we hold about you (from Settings → Account → Export).</li>
+  <li><strong>Export</strong> — download your full account data in a portable format.</li>
+  <li><strong>Correct</strong> — fix inaccurate information (most fields are editable directly in the app).</li>
+  <li><strong>Delete</strong> — permanently remove your account and all associated data. See our <a href="data-deletion.html">Data Deletion page</a>.</li>
+  <li><strong>Withdraw consent</strong> — disconnect any platform account at any time from Settings → Platforms. We will immediately stop using the corresponding access token.</li>
+  <li><strong>Object to processing</strong> — for users in the EU/UK/CA: contact us using the email below to object to specific processing activities.</li>
+  <li><strong>Lodge a complaint</strong> — for users in jurisdictions with a data-protection authority, you may lodge a complaint with your local regulator (e.g., the ICO in the UK, the CNIL in France, the FTC in the US).</li>
+</ul>
+
+<h2 id="retention">7. Data retention</h2>
+<ul>
+  <li><strong>Account data</strong> — kept while your account is active.</li>
+  <li><strong>Content you published</strong> — kept until you delete it, or until 90 days after you delete your account (for backup-recovery purposes).</li>
+  <li><strong>Analytics cache</strong> — purged after 6 months of inactivity.</li>
+  <li><strong>Error logs</strong> — retained 30 days, then auto-deleted.</li>
+  <li><strong>Backups</strong> — encrypted offsite backups retained 90 days, then deleted.</li>
+</ul>
+
+<h2 id="meta-data">8. Specific notice for data from Meta platforms</h2>
+<p>In compliance with Meta's Platform Terms:</p>
+<ul>
+  <li>We use Meta-platform data <strong>only to provide the features you have authorized</strong>.</li>
+  <li>We do not use Meta-platform data for advertising, profiling, or any purpose unrelated to your use of Kakoi.</li>
+  <li>If you disconnect a Meta account from Kakoi, we will <strong>delete all data obtained from Meta for that account within 30 days</strong>, except where retention is legally required.</li>
+  <li>If Meta revokes our access (for example, you remove our app from your Meta settings, or your token expires and is not refreshed), we will treat that as a disconnection and follow the deletion process above.</li>
+</ul>
+
+<h2 id="cookies">9. Cookies and tracking</h2>
+<p>We use the minimum set of cookies necessary to operate the service:</p>
+<ul>
+  <li><strong>Session cookie</strong> — keeps you signed in (HTTP-only, Secure, SameSite=Lax).</li>
+  <li><strong>Theme preference cookie</strong> — remembers your light/dark mode choice.</li>
+</ul>
+<p>We do not use third-party advertising cookies or cross-site trackers. We do not have a Facebook Pixel, Google Analytics, or similar profiling embedded in the application.</p>
+
+<h2 id="children">10. Children's privacy</h2>
+<p>Kakoi is intended for users 18 years of age or older. We do not knowingly collect information from anyone under 18. If we discover that we have collected such information, we will delete it promptly.</p>
+
+<h2 id="international">11. International transfers</h2>
+<p>Kakoi may store and process your data in countries other than your country of residence. Where required by law (for example, under the EU GDPR), we use approved Standard Contractual Clauses for international transfers and apply technical safeguards (encryption in transit and at rest) to protect your data regardless of where it is processed.</p>
+
+<h2 id="changes">12. Changes to this policy</h2>
+<p>We may update this Privacy Policy from time to time. When we do, we will:</p>
+<ul>
+  <li>Update the "Last updated" date at the top of this page.</li>
+  <li>Notify you by email and in-product banner if the change is material (for example, a new category of data collection).</li>
+  <li>Give you at least 30 days' notice before any material change takes effect, during which you may delete your account before the new terms apply.</li>
+</ul>
+
+<h2 id="contact">13. Contact</h2>
+<p>For privacy questions, requests, or to exercise any of your rights:</p>
+<ul>
+  <li><strong>Email:</strong> [CONTACT_EMAIL — replace before publishing]</li>
+  <li><strong>Mail:</strong> [POSTAL_ADDRESS — replace before publishing]</li>
+</ul>
+<p>We respond to all valid requests within 30 days (or sooner where required by law).</p>
+
+</main>
+
+<footer class="footer">
+  © 2026 Kakoi · <a href="index.html">Home</a> · <a href="terms.html">Terms</a> · <a href="data-deletion.html">Data Deletion</a>
+</footer>
+
+</body>
+</html>
