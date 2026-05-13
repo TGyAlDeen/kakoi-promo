@@ -3,159 +3,217 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kakoi — Promotional Materials</title>
-<meta name="description" content="Pitch deck, landing page, and user guide for Kakoi — the AI content engine for creators.">
+<title>Kakoi — Press Kit</title>
+<meta name="description" content="Pitch deck, landing page, and user guide for Kakoi.">
 <style>
   :root {
-    --bg: #FAFAF7;
-    --ink: #1A1A2E;
-    --ink-soft: #4A4A6A;
-    --muted: #8A8AA0;
-    --accent: #E94560;
-    --gold: #FFD369;
-    --navy: #16213E;
-    --navy-deep: #0F1B33;
-    --border: rgba(26, 26, 46, 0.08);
+    --bg: #F7F4EE;
+    --bg-soft: #EFEAE0;
     --surface: #FFFFFF;
-    --surface-alt: #F4F2EC;
+    --ink: #1A1A2E;
+    --ink-soft: #4F5163;
+    --muted: #8B8C9A;
+    --accent: #E26F5C;
+    --accent-soft: #FBE7E1;
+    --gold: #C8961E;
+    --gold-soft: #FAF1DC;
+    --border: rgba(26, 26, 46, 0.08);
+    --shadow-sm: 0 1px 2px rgba(26, 26, 46, 0.04);
+    --shadow: 0 8px 24px rgba(26, 26, 46, 0.06);
+    --shadow-lg: 0 20px 40px rgba(26, 26, 46, 0.08);
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0; font-family: 'Inter', -apple-system, sans-serif;
-    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
-    color: var(--bg);
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
     display: flex; align-items: center; justify-content: center;
-    padding: 2rem;
+    padding: 3rem 2rem;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(226, 111, 92, 0.06), transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(200, 150, 30, 0.05), transparent 35%);
   }
   .container { max-width: 880px; width: 100%; }
-  .header { text-align: center; margin-bottom: 3rem; }
+
+  .header { text-align: center; margin-bottom: 3.5rem; }
   .badge {
     display: inline-block;
-    background: rgba(255, 211, 105, 0.15);
-    color: var(--gold);
-    padding: 0.35rem 0.9rem; border-radius: 100px;
-    font-size: 0.78rem; font-weight: 600;
-    letter-spacing: 0.05em; text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(255, 211, 105, 0.3);
+    background: var(--surface);
+    color: var(--accent);
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    border: 1px solid var(--accent-soft);
+    box-shadow: var(--shadow-sm);
   }
   h1 {
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
-    margin: 0 0 0.6rem; letter-spacing: -0.03em;
+    font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+    margin: 0 0 0.8rem;
+    letter-spacing: -0.025em;
     font-weight: 800;
+    color: var(--ink);
   }
-  h1 .gold { color: var(--gold); }
+  h1 .dot { color: var(--accent); }
   .tag {
-    color: rgba(250, 250, 247, 0.7);
-    font-size: 1.05rem; margin: 0;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin: 0;
+    max-width: 30rem;
+    margin: 0 auto;
+    line-height: 1.55;
   }
+
   .grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
-    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
   }
   @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+
   .card {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 18px;
     padding: 1.8rem;
     text-decoration: none;
-    color: var(--bg);
-    transition: transform 0.25s, background 0.25s, border-color 0.25s;
+    color: var(--ink);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     display: block;
+    box-shadow: var(--shadow-sm);
   }
   .card:hover {
-    transform: translateY(-4px);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 211, 105, 0.4);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    border-color: rgba(226, 111, 92, 0.3);
   }
-  .card .emoji { font-size: 2.2rem; display: block; margin-bottom: 0.8rem; }
-  .card h3 { margin: 0 0 0.4rem; font-size: 1.2rem; color: var(--gold); }
-  .card p { margin: 0 0 1rem; font-size: 0.93rem; color: rgba(250, 250, 247, 0.7); line-height: 1.5; }
-  .card .meta {
-    display: flex; gap: 0.4rem; flex-wrap: wrap;
-    font-size: 0.75rem; color: rgba(250, 250, 247, 0.5);
+  .card .icon {
+    width: 2.6rem; height: 2.6rem;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
   }
-  .card .meta span {
-    background: rgba(255, 255, 255, 0.06);
-    padding: 0.2rem 0.5rem; border-radius: 100px;
+  .card:nth-child(2) .icon { background: var(--gold-soft); color: var(--gold); }
+  .card:nth-child(3) .icon { background: #E4F0E8; color: #4A8E68; }
+  .card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
   }
+  .card p {
+    margin: 0 0 1.2rem;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .card .open {
+    color: var(--accent);
+    font-size: 0.85rem; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    transition: gap 0.2s ease;
+  }
+  .card:hover .open { gap: 0.55rem; }
+
   .downloads {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 18px;
-    padding: 1.6rem;
-    margin-top: 1.5rem;
+    padding: 1.6rem 1.8rem;
+    margin-top: 1.2rem;
+    box-shadow: var(--shadow-sm);
   }
   .downloads h4 {
-    margin: 0 0 1rem; font-size: 0.78rem;
-    color: var(--muted); letter-spacing: 0.08em;
-    text-transform: uppercase; font-weight: 600;
+    margin: 0 0 1.1rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
   }
   .download-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 0.6rem;
   }
   .download-grid a {
-    color: rgba(250, 250, 247, 0.85);
+    color: var(--ink);
     text-decoration: none;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--bg-soft);
     padding: 0.7rem 1rem;
     border-radius: 10px;
     font-size: 0.88rem;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    font-weight: 500;
+    border: 1px solid transparent;
     display: flex; align-items: center; gap: 0.5rem;
     transition: background 0.2s, border-color 0.2s;
   }
   .download-grid a:hover {
-    background: rgba(255, 211, 105, 0.1);
-    border-color: rgba(255, 211, 105, 0.3);
+    background: var(--gold-soft);
+    border-color: var(--gold);
+    color: var(--ink);
   }
   .download-grid .ext {
-    font-family: 'JetBrains Mono', monospace;
-    background: rgba(255, 211, 105, 0.2); color: var(--gold);
-    font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 4px;
+    font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
     margin-left: auto;
+    border: 1px solid var(--border);
   }
+
   .footer {
     text-align: center;
-    color: rgba(250, 250, 247, 0.4);
+    color: var(--muted);
     font-size: 0.82rem;
     margin-top: 2.5rem;
   }
-  .footer a { color: var(--gold); text-decoration: none; }
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 <div class="container">
 
   <div class="header">
-    <span class="badge">Promotional Materials</span>
-    <h1>Kakoi <span class="gold">·</span> Press Kit</h1>
-    <p class="tag">One creator. Four platforms. Zero burnout. Pick a doc to view.</p>
+    <span class="badge">Press Kit</span>
+    <h1>Kakoi<span class="dot">.</span></h1>
+    <p class="tag">One creator. Four platforms. Zero burnout. Pick a document to view.</p>
   </div>
 
   <div class="grid">
     <a class="card" href="KAKOI_LANDING.html">
-      <span class="emoji">📄</span>
+      <div class="icon">📄</div>
       <h3>Overview</h3>
-      <p>Single-page promotional site. The fastest way to understand what Kakoi does.</p>
-      <div class="meta"><span>HTML</span><span>~11 MB · standalone</span></div>
+      <p>Single-page promotional site — the fastest way to understand what Kakoi does and who it's for.</p>
+      <span class="open">Open landing page →</span>
     </a>
 
     <a class="card" href="KAKOI_GUIDE.html">
-      <span class="emoji">📖</span>
+      <div class="icon">📖</div>
       <h3>User Guide</h3>
-      <p>Step-by-step walkthrough of every feature, organized into 12 sections with screenshots and workflow recipes.</p>
-      <div class="meta"><span>HTML</span><span>~11 MB · standalone</span></div>
+      <p>Step-by-step walkthrough of every feature, with screenshots and ready-to-follow recipes.</p>
+      <span class="open">Open guide →</span>
     </a>
 
     <a class="card" href="KAKOI_PITCH.html">
-      <span class="emoji">🎤</span>
+      <div class="icon">🎤</div>
       <h3>Slide Deck</h3>
-      <p>37-slide presentation. Best for live demos or pitching to a creator.</p>
-      <div class="meta"><span>HTML</span><span>Marp · 16:9</span></div>
+      <p>37-slide presentation. Best for live demos or pitching Kakoi to a creator.</p>
+      <span class="open">Open deck →</span>
     </a>
   </div>
 
@@ -169,24 +227,8 @@
     </div>
   </div>
 
-  <div class="downloads">
-    <h4>Slide Images (for SNS posts)</h4>
-    <p style="color: rgba(250, 250, 247, 0.6); font-size: 0.88rem; margin: 0 0 1rem;">
-      37 individual slide PNGs at 2560×1440. Perfect for Instagram / LinkedIn / Threads carousels.
-    </p>
-    <div class="download-grid">
-      <a href="slides/slide.001.png">Slide 01 — Cover <span class="ext">PNG</span></a>
-      <a href="slides/slide.007.png">Slide 07 — Four pillars <span class="ext">PNG</span></a>
-      <a href="slides/slide.011.png">Slide 11 — Publish everywhere <span class="ext">PNG</span></a>
-      <a href="slides/slide.017.png">Slide 17 — Analytics <span class="ext">PNG</span></a>
-      <a href="slides/slide.028.png">Slide 28 — News curator <span class="ext">PNG</span></a>
-      <a href="slides/slide.035.png">Slide 35 — Try it <span class="ext">PNG</span></a>
-      <a href="slides/">Browse all 37 → <span class="ext">DIR</span></a>
-    </div>
-  </div>
-
   <div class="footer">
-    © 2026 Kakoi · Static site served from GitHub Pages
+    © 2026 Kakoi · Served from GitHub Pages
   </div>
 </div>
 </body>
